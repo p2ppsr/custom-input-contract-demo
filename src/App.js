@@ -51,21 +51,6 @@ const App = () => {
         }
       }
 
-      console.log({
-        description: 'Redeem satoshis from a custom contract',
-        keyName: 'primarySigning',
-        keyPath: 'm/1033/1',
-        inputs: {
-          [contract.txid]: {
-            ...contract,
-            outputsToRedeem: [{
-              index,
-              unlockingScript
-            }]
-          }
-        }
-      })
-
       const redeem = await createAction({
         description: 'Redeem satoshis from a custom contract',
         keyName: 'primarySigning',
